@@ -15,4 +15,16 @@ obj1.insert_one(document)
 document = {"Name": "MEGHA VAMSI KIRAN", "Roll No": 153,"Branch": "CSE" }
 obj1.insert_one(document)
 print("Inserted Data - 1 Successfully")
-#document = { "Name": "MEGHA VAMSI KIRAN", "Roll No": 110, "Branch":"CSE"}
+#Retriving single data from collection
+
+query={"Name":"Jatla Nikhil"}
+print(obj1.find_one(query))
+
+query={"Branch":"CSE"}
+result=obj1.find(query)
+for i in result:
+    print(i)
+    #deleting single documents from collection
+query ={"Rool No":10}
+obj1.delete_one(query)
+print("Delete Done")
